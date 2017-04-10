@@ -1,24 +1,5 @@
-# Copyright (c) 2012, Sven Thiele <sthiele78@gmail.com>
-#
-# This file is part of meneco.
-#
-# meneco is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# meneco is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with meneco.  If not, see <http://www.gnu.org/licenses/>.
 # -*- coding: utf-8 -*-
 import os
-#from sets import Set
-
-#from xlwt import Workbook
 import csv
   
 def clean_up() :
@@ -51,8 +32,6 @@ def split_proj_id(answer) :
     return crossroads
 
 def print_crossroad(answer, dico, file_name, option_ecriture="wt",titre="") :
-    #answer : dictionnaire => id_cross : {nbre_target, [target]}
-    #dico : dictionnaire => {id_metabolite : [nom,compartiment]}
         
     file = open(file_name,option_ecriture)
     writer = csv.writer(file,delimiter="\t")
@@ -68,9 +47,5 @@ def print_crossroad(answer, dico, file_name, option_ecriture="wt",titre="") :
             writer.writerow([element.replace("\"","")]+dico[element.replace("\"","")]+answer[element.replace("\"","")]) 
         except KeyError :
             writer.writerow([element.replace("\"","")]+[element.replace("\"","")]) 
-            print(element,"pas dans le dico !!!!!!!!!!!!!!!!!!!!!!")
 
     file.close()
-
-
-
