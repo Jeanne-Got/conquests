@@ -1,26 +1,20 @@
-#Recherche des carrefours puis
-#Recherche des projections
-#passage en python 3
 # -*- coding: utf-8 -*-
 from pyasp.asp import *
 from optparse import OptionParser
 from src import query, utils, sbml
 import sys
-#import os.path
-
 
 def topological_crossroad(draft_sbml, seeds_sbml, targets_sbml, directory_name) :
     
     name_metabolites = {}
     
-########################################## recuperation des fichiers
     draftnet = sbml.readSBMLnetwork(draft_sbml, 'draft') 
     seeds = sbml.readSBMLseeds(seeds_sbml)
     initial_targets = sbml.readSBMLtargets(targets_sbml)
-########################################### recuperation des noms
+    
     name_metabolites = sbml.readSBMLname(draft_sbml)
   
-#####################################################################recupere liste des targets produites 
+#####################################################################
     seed_name = []
     for s in seeds :
         seed_name.append(s.arg(0))
@@ -34,7 +28,7 @@ def topological_crossroad(draft_sbml, seeds_sbml, targets_sbml, directory_name) 
     answer= query.compute_crossroad(draftnet,seeds,productible_targets)
     crossroads = utils.split_proj_id(answer)
                 
-    if not os.path.isdir(directory_name):            # creation du dossier si il n'existe pas
+    if not os.path.isdir(directory_name):            
             os.makedirs(directory_name)
     
     if len(crossroads.keys())!=0 :
@@ -55,12 +49,10 @@ if __name__ == '__main__':
     draft_sbml = args[0]
     seeds_sbml = args[1]
     targets_sbml =  args[2]
-    #print_option = options.pr
     directory_name = options.directory
     
     if directory_name != "" and directory_name[-1]!="/" : directory_name += "/"
     elif "/" in draft_sbml : directory_name = draft_sbml.rsplit('/',1)[0]
             
     
-    topological_crossroad(draft_sbml, seeds_sbml, targets_sbml, directory_name)        
-    #utils.clean_up() 
+    topological_crossroad(draft_sbml, seeds_sbml, targets_sbml, directory_name)    
