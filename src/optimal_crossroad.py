@@ -1,6 +1,6 @@
 import sys
 
-from lxml import etree # pour la lecture du fichier
+from lxml import etree
 import csv
 from cobra.io import read_sbml_model, write_sbml_model
 from cobra.io.sbml import create_cobra_model_from_sbml_file
@@ -11,7 +11,7 @@ def optimal_crossroad(networkFile, file_seed, file_target, limit, repository) :
     
     model=create_cobra_model_from_sbml_file(networkFile)
     model.optimize()
-    if (model.solution.f > 1e-5) and file_seed != "":
+    if (model.solution.f > limit) and file_seed != "":
         FVA_result = flux_analysis.variability.flux_variability_analysis(model, fraction_of_optimum=1.0)
         
 
@@ -27,14 +27,14 @@ def optimal_crossroad(networkFile, file_seed, file_target, limit, repository) :
                 essential.update({id_reaction : "<-"})
                 
         parser = etree.XMLParser(remove_blank_text=True)
-    #################################################################################### lecture seed
+    #################################################################################### seed
         seed = etree.parse(file_seed, parser)
         root = "}".join(seed.getroot().tag.split("}")[:-1])+"}"
         seed_tree = seed.getroot().find(root+'model/'+root+'listOfSpecies')
         listOfSeed = []
         for element in seed_tree :
                 listOfSeed.append(element.attrib['id'])
-        #################################################################################### lecture target
+        #################################################################################### target
         target = etree.parse(file_target, parser)
         root = "}".join(target.getroot().tag.split("}")[:-1])+"}"
         target_tree = target.getroot().find(root+'model/'+root+'listOfSpecies')
