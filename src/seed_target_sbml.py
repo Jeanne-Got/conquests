@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
-#prenc fichier sbml et ressort les seeds et les targets
-# seed => boudaryCondition ="true"
-# target => reactant de biomass
-from lxml import etree # pour la lecture du fichier
+from lxml import etree 
 import sys
 import os
 
