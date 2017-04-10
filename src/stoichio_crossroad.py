@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python2
-#prenc fichier sbml et ressort les seeds et les targets
-# seed => boudaryCondition ="true"
-# target => reactant de biomass
-from lxml import etree # pour la lecture du fichier
+from lxml import etree
 import sys
 import os
-#import time
 import csv
 
 from cobra.io import read_sbml_model, write_sbml_model
@@ -52,7 +48,7 @@ def stoichio_crossroad(file_draft, file_metabo, file_seed, file_target, limit, r
 				name_metabolite[id_specie].append(specie.attrib["compartment"])
 			except KeyError :
 				pass
-	######################################################################## recuperation du model dans le draft
+	######################################################################## 
 	with open(file_draft,"r") as file :
 		line0 = file.readlines()[0]
 	
