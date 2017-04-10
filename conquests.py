@@ -5,10 +5,6 @@ import sys
 import os.path
 
 from conquests import seed_target_sbml,topo_crossroad,stoichio_crossroad,optimal_crossroad
-#from seed_target_sbml import *
-#from topo_crossroad import *
-#from stoichio_crossroad import *
-#from optimal_crossroad import *
 
 if __name__ == '__main__':
 
@@ -49,7 +45,7 @@ if __name__ == '__main__':
     else :
         topo_crossroad.topological_crossroad(draft, seed_cofactor, target, repository)
    
-    
+
     stoichio_crossroad.stoichio_crossroad(draft, draft, seed, target, limit, repository)
     
     
