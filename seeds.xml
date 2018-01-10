@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sbml xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" level="3" sboTerm="SBO:0000624" version="1" xmlns="http://www.sbml.org/sbml/level3/version1/core" fbc:required="false">
+  <model fbc:strict="true">
+    <listOfUnitDefinitions>
+      <unitDefinition id="mmol_per_gDW_per_hr">
+        <listOfUnits>
+          <unit exponent="1" kind="mole" multiplier="1" scale="-3"/>
+          <unit exponent="-1" kind="gram" multiplier="1" scale="0"/>
+          <unit exponent="-1" kind="second" multiplier="3600" scale="0"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <fbc:listOfObjectives fbc:activeObjective="obj">
+      <fbc:objective fbc:id="obj" fbc:type="maximize">
+        <fbc:listOfFluxObjectives/>
+      </fbc:objective>
+    </fbc:listOfObjectives>
+    <listOfParameters>
+      <parameter constant="true" id="cobra_default_lb" sboTerm="SBO:0000626" units="mmol_per_gDW_per_hr" value="-1000"/>
+      <parameter constant="true" id="cobra_default_ub" sboTerm="SBO:0000626" units="mmol_per_gDW_per_hr" value="1000"/>
+      <parameter constant="true" id="cobra_0_bound" sboTerm="SBO:0000626" units="mmol_per_gDW_per_hr" value="0"/>
+    </listOfParameters>
+    <listOfCompartments>
+      <compartment constant="true" id="e" name=""/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_etoh_e" name="ethanol" compartment="e" fbc:charge="0" fbc:chemicalFormula="C2H6O"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_h2o_e" name="water" compartment="e" fbc:charge="0" fbc:chemicalFormula="H2O"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_caro_e" name="beta-carotene" compartment="e" fbc:charge="0" fbc:chemicalFormula="C40H56"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_retinol_e" name="retinol" compartment="e" fbc:charge="0" fbc:chemicalFormula="C20H30O"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_thm_e" name="thiamine(1+)" compartment="e" fbc:charge="1" fbc:chemicalFormula="C12H17N4OS"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_adocbl_e" name="cobamamide" compartment="e" fbc:charge="0" fbc:chemicalFormula="C72H100CoN18O17P"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ribflv_e" name="riboflavin" compartment="e" fbc:charge="0" fbc:chemicalFormula="C17H20N4O6"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_nac_e" name="nicotinic acid" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C6H4NO2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ncam_e" name="nicotinamide" compartment="e" fbc:charge="0" fbc:chemicalFormula="C6H6N2O"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_pnto_R_e" name="pantothenic acid" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C9H16NO5"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_pydam_e" name="pyridoxaminium(1+)" compartment="e" fbc:charge="1" fbc:chemicalFormula="C8H13N2O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_pydxn_e" name="pyridoxine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C8H11NO3"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_pydx_e" name="pyridoxal" compartment="e" fbc:charge="0" fbc:chemicalFormula="C8H9NO3"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_btn_e" name="biotinate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C10H15N2O3S"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_10fthf_e" name="10-formyltetrahydrofolate(2-)" compartment="e" fbc:charge="-2" fbc:chemicalFormula="C20H21N7O7"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_5mthf_e" name="5-methyltetrahydrofolate(2-)" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C20H24N7O6"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_thf_e" name="(6S)-5,6,7,8-tetrahydrofolate(2-)" compartment="e" fbc:charge="-2" fbc:chemicalFormula="C19H21N7O6"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ascb_L_e" name="L-ascorbate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C6H7O6"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_vitd3_e" name="calciol" compartment="e" fbc:charge="0" fbc:chemicalFormula="C27H44O"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_avite1_e" name="(+)-alpha-tocopherol" compartment="e" fbc:charge="0" fbc:chemicalFormula="C29H50O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_phllqne_e" name="Phylloquinone" compartment="e"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ca2_e" name="calcium(2+)" compartment="e" fbc:charge="2" fbc:chemicalFormula="Ca"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_cl_e" name="chloride" compartment="e" fbc:charge="-1" fbc:chemicalFormula="Cl"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_k_e" name="potassium(1+)" compartment="e" fbc:charge="1" fbc:chemicalFormula="K"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_mg2_e" name="Magnesium" compartment="e"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_na1_e" name="sodium(1+)" compartment="e" fbc:charge="1" fbc:chemicalFormula="Na"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_pi_e" name="hydrogenphosphate" compartment="e" fbc:charge="-2" fbc:chemicalFormula="HO4P"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_cu2_e" name="Copper" compartment="e"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_fe2_e" name="iron(2+)" compartment="e" fbc:charge="2" fbc:chemicalFormula="Fe"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_fe3_e" name="iron(3+)" compartment="e" fbc:charge="3" fbc:chemicalFormula="Fe"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_mn2_e" name="Manganese" compartment="e"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_zn2_e" name="Zinc" compartment="e"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_mnl_e" name="D-Mannitol" compartment="e"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_xylt_e" name="xylitol" compartment="e" fbc:charge="0" fbc:chemicalFormula="C5H12O5"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_lcts_e" name="lactose" compartment="e" fbc:charge="0" fbc:chemicalFormula="C12H22O11"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_malt_e" name="maltose" compartment="e" fbc:charge="0" fbc:chemicalFormula="C12H22O11"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_sucr_e" name="sucrose" compartment="e" fbc:charge="0" fbc:chemicalFormula="C12H22O11"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_fru_e" name="D-fructose" compartment="e" fbc:charge="0" fbc:chemicalFormula="C6H12O6"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_gal_e" name="D-galactose" compartment="e" fbc:charge="0" fbc:chemicalFormula="C6H12O6"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ala_L_e" name="L-alanine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C3H7NO2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_arg_L_e" name="L-argininium(1+)" compartment="e" fbc:charge="1" fbc:chemicalFormula="C6H15N4O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_asp_L_e" name="L-aspartate(1-)" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C4H6NO4"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_cys_L_e" name="L-cysteine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C3H7NO2S"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_glu_L_e" name="L-glutamate(1-)" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C5H8NO4"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_gly_e" name="glycine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C2H5NO2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_urate_e" name="7,9-dihydro-1H-purine-2,6,8(3H)-trione" compartment="e" fbc:charge="0" fbc:chemicalFormula="C5H4N4O3"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_his_L_e" name="L-histidine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C6H9N3O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ile_L_e" name="L-isoleucine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C6H13NO2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_leu_L_e" name="L-leucine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C6H13NO2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_lys_L_e" name="L-lysinium(1+)" compartment="e" fbc:charge="1" fbc:chemicalFormula="C6H15N2O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_met_L_e" name="L-methionine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C5H11NO2S"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_phe_L_e" name="L-phenylalanine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C9H11NO2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_pro_L_e" name="L-proline" compartment="e" fbc:charge="0" fbc:chemicalFormula="C5H9NO2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ser_L_e" name="L-serine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C3H7NO3"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_thr_L_e" name="L-threonine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C4H9NO3"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_trp_L_e" name="L-tryptophan" compartment="e" fbc:charge="0" fbc:chemicalFormula="C11H12N2O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_tyr_L_e" name="L-tyrosine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C9H11NO3"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_val_L_e" name="L-valine" compartment="e" fbc:charge="0" fbc:chemicalFormula="C5H11NO2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_dca_e" name="decanoate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C10H19O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ttdca_e" name="myristate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C14H27O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ptdca_e" name="pentadecanoic acid" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C15H29O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_hdca_e" name="palmitate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C16H31O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_hpdca_e" name="margarate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C17H33O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ocdca_e" name="stearate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C18H35O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ocdcea_e" name="oleate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C18H33O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_lnlc_e" name="linoleate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C18H31O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_lnlnca_e" name="alpha-linolenate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C18H29O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_strdnc_e" name="all-cis-octadeca-6,9,12,15-tetraenoic acid" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C18H27O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_arach_e" name="arachidate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C20H39O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_arachd_e" name="arachidonate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C20H31O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_adrn_e" name="all-cis-docosa-7,10,13,16-tetraenoic acid" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C22H35O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_crvnc_e" name="(4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C22H31O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_but_e" name="butyrate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C4H7O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_octa_e" name="octanoate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C8H15O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_chsterol_e" name="cholesterol" compartment="e" fbc:charge="0" fbc:chemicalFormula="C27H46O"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_ddca_e" name="dodecanoate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C12H23O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_lgnc_e" name="lignocerate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C24H47O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_fol_e" name="folic acid" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C19H18N7O6"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_hdcea_e" name="palmitoleate" compartment="e" fbc:charge="-1" fbc:chemicalFormula="C16H29O2"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_strch1_e" name="starch, structure 1 (1,6-{7[1,4-Glc], 4[1,4-Glc]})" compartment="e" fbc:charge="0" fbc:chemicalFormula="C66H112O56"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_i_e" name="iodide" compartment="e" fbc:charge="-1" fbc:chemicalFormula="I"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="false" id="M_starch1200_e" name="Starch n=1200 repeat units (300 repeat units amylose, 900 repeat units amylopectin, corresponds to potatoe starch)" compartment="e"/>
+    </listOfSpecies>
+    <listOfReactions/>
+  </model>
+</sbml>

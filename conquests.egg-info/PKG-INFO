@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: conquests
+Version: 1.0.1
+Summary: Crossroads in metabOlic NEtwork from Stoichiometrical and Topological Studies
+Home-page: UNKNOWN
+Author: Julie Laniau
+Author-email: laniau.julie@orange.fr
+License: GPLv3+
+Description-Content-Type: UNKNOWN
+Description: Python 3 tool to analyze metabolic networks through the computation of metabolic crossroads
+Platform: UNKNOWN

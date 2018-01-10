@@ -19,7 +19,7 @@ def ExportSampleSheet():
     """
 
     if len(sys.argv) != 2:
-        print 'Usage: CreateLearningSheet [SampleSheet.xls]'
+        print ('Usage: CreateLearningSheet [SampleSheet.xls]')
         sys.exit()
 
     # Get the workbook file name from the command line

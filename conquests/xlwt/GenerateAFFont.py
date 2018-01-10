@@ -20,7 +20,7 @@ def GenerateAFFont():
     Open up the sampler sheet supplied, read in the sizes and determine the factors from there..
     """
     if len(sys.argv) != 2:
-        print 'Usage: GenerateAFFont [SampleSheet.xls]'
+        print( 'Usage: GenerateAFFont [SampleSheet.xls]')
         sys.exit()
 
     # Get the workbook file name from the command line

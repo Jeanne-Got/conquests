@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from pyasp.asp import *
 from optparse import OptionParser
-from src import query, utils, sbml
+from conquests import query, utils, sbml
 import sys
 
 def topological_crossroad(draft_sbml, seeds_sbml, targets_sbml, directory_name) :

@@ -9,7 +9,7 @@ from cobra.io import read_sbml_model, write_sbml_model
 from cobra.io.sbml import create_cobra_model_from_sbml_file
 from cobra import *
 
-from src import draft_without_metabolite
+from conquests import draft_without_metabolite
 
 def stoichio_crossroad(file_draft, file_metabo, file_seed, file_target, limit, repository, file_delete='y') :
 	
