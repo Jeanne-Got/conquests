@@ -18,7 +18,6 @@ if __name__ == '__main__':
     parser.add_argument('-l', '--limit', help='limit to flux value to be considered as null (by default 10E-5)', type=float, default=1E-5)
     parser.add_argument('-r',"--repository", help="repository to store the answer-files (by default named answer_file in draft repository)",default="")
 
-
     args         = parser.parse_args()
     draft        = args.draftnet
     biomass_id   = args.biomass
@@ -39,14 +38,15 @@ if __name__ == '__main__':
     seed_target_sbml.seed_target_from_sbml(draft, biomass_id,repository)
     seed = repository+"seeds_from_sbml.sbml"
     target = repository+"targets_from_sbml.sbml"
-    
+
+    # Optimal biomass crossroads
+    optimal_crossroad.optimal_crossroad(draft, seed, target, limit, repository)
+    # Stoichiometrical crossroads
+    stoichio_crossroad.stoichio_crossroad(draft, draft, seed, target, limit, repository)
+    # Topology crossroads
     if seed_cofactor == "" :
         topo_crossroad.topological_crossroad(draft, seed, target, repository)
     else :
         topo_crossroad.topological_crossroad(draft, seed_cofactor, target, repository)
    
 
-    stoichio_crossroad.stoichio_crossroad(draft, draft, seed, target, limit, repository)
-    
-    
-    optimal_crossroad.optimal_crossroad(draft, seed, target, limit, repository)

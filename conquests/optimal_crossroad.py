@@ -10,17 +10,17 @@ from cobra import *
 def optimal_crossroad(networkFile, file_seed, file_target, limit, repository) :
     
     model=create_cobra_model_from_sbml_file(networkFile)
-    model.optimize()
-    if (model.solution.f > limit) and file_seed != "":
+    model_opt=model.optimize()
+    if (model_opt.objective_value > limit) and file_seed != "":
         FVA_result = flux_analysis.variability.flux_variability_analysis(model, fraction_of_optimum=1.0)
         
 
         essential = {}
         cross_FVA = set()
         BDD_species = {}
-        for id_reaction in FVA_result.keys() :
-            inf = FVA_result[id_reaction]['minimum']
-            sup = FVA_result[id_reaction]['maximum']
+        for id_reaction in FVA_result.index.values :
+            inf = FVA_result.at[id_reaction, 'minimum']
+            sup = FVA_result.at[id_reaction, 'maximum']
             if inf>limit and sup>limit :
                 essential.update({id_reaction : "->"})
             elif inf<-limit and sup<-limit :
@@ -89,7 +89,7 @@ def optimal_crossroad(networkFile, file_seed, file_target, limit, repository) :
                     except :
                         pass
         
-        file = open(repository+"optimal_biomass_crossroads.sbml","wt")
+        file = open(repository+"optimal_biomass_crossroads.csv","wt")
         writer=csv.writer(file,delimiter="\t")
         if len(list(BDD_species)[0]) == 2 :
             writer.writerow(['identifiant','name','compartment'])

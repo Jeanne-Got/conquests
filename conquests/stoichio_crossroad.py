@@ -64,8 +64,8 @@ def stoichio_crossroad(file_draft, file_metabo, file_seed, file_target, limit, r
 		outFile = draft_without_metabolite.without_metabo(file_draft,removed_metabo,"new_draft.sbml")
 				
 		model=create_cobra_model_from_sbml_file(outFile)
-		model.optimize()
-		growth = model.solution.f
+		model = model.optimize()
+		growth = model.objective_value
 		
 		try :
 			if abs(growth) <= limit :
